@@ -1,0 +1,365 @@
+/* Greeting Preview Card Styles */
+
+.preview-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Theme Picker Bar */
+.theme-picker-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 640px) {
+  .theme-picker-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.theme-bar-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.theme-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.theme-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 700;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-main);
+}
+
+.theme-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+/* Specific theme pills dot colors */
+.theme-pill.sakura .theme-color-dot { background-color: #ffd1dc; }
+.theme-pill.midnight .theme-color-dot { background-color: #0b132b; }
+.theme-pill.gold .theme-color-dot { background-color: #d4af37; }
+.theme-pill.teal .theme-color-dot { background-color: #57c5b6; }
+.theme-pill.slate .theme-color-dot { background-color: #94a3b8; }
+
+.theme-pill:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+.theme-pill.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* ==========================================
+   THE GREETING CARD CONTAINER
+   ========================================== */
+
+.greeting-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  aspect-ratio: 5 / 7; /* Golden card proportions */
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  background: var(--card-bg);
+  color: var(--card-text);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 480px) {
+  .greeting-card {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .greeting-card {
+    min-height: 500px;
+  }
+}
+
+/* Background SVGs */
+.card-decor-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-inner-frame {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card Header styles */
+.card-header-icon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-occasion-icon-wrapper {
+  color: var(--card-accent);
+  background: var(--card-accent-bg);
+  padding: 0.75rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border: 1px solid rgba(var(--card-decor-color), 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.card-occasion-title {
+  font-family: var(--card-header-font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--card-accent);
+}
+
+/* Card Salutation (Opening) */
+.card-salutation {
+  font-family: var(--card-font-family);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Message Text Section */
+.card-body-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.card-message-text {
+  font-family: var(--card-font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  border-radius: var(--radius-xs);
+  padding: 0.5rem;
+  margin: -0.5rem;
+  transition: background var(--transition-fast);
+}
+
+.card-message-text:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.card-paragraph {
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.card-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Signature section */
+.card-signature {
+  font-family: var(--card-cursive-font);
+  font-size: 1.75rem;
+  text-align: right;
+  margin-top: 1.5rem;
+  color: var(--card-accent);
+  font-weight: 500;
+}
+
+/* Hover indicators */
+.card-hover-edit-indicator {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  background: var(--card-accent);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-xs);
+  opacity: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  transform: translateY(5px);
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.card-message-text:hover .card-hover-edit-indicator {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   IN-CARD MESSAGE EDITOR
+   ========================================== */
+
+.card-editor-overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  width: 100%;
+}
+
+.card-edit-textarea {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--card-accent) !important;
+  border-radius: var(--radius-sm);
+  color: #1e293b !important;
+  font-family: var(--font-sans) !important; /* Keep editor sans-serif for ease of typing */
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  resize: none;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-editor {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-editor.save {
+  background: var(--card-accent);
+  color: white;
+}
+
+.btn-editor.save:hover {
+  filter: brightness(1.1);
+}
+
+.btn-editor.cancel {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--card-text);
+}
+
+.btn-editor.cancel:hover {
+  background: rgba(0, 0, 0, 0.10);
+}
+
+/* Skeleton animation overrides inside preview card */
+.card-skeleton-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.card-skeleton-loader .skeleton-text {
+  background: linear-gradient(90deg, rgba(var(--card-text), 0.08) 25%, rgba(var(--card-text), 0.03) 50%, rgba(var(--card-text), 0.08) 75%);
+  background-size: 200% 100%;
+}
+
+/* Responsive typography & element scale for smaller screens */
+@media (max-width: 480px) {
+  .card-occasion-title {
+    font-size: 1.1rem;
+  }
+  .card-salutation {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-message-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .card-paragraph {
+    margin-bottom: 0.75rem;
+  }
+  .card-signature {
+    font-size: 1.35rem;
+    margin-top: 1rem;
+  }
+  .card-header-icon-section {
+    margin-bottom: 1rem;
+  }
+  .card-occasion-icon-wrapper {
+    padding: 0.5rem;
+  }
+  .card-occasion-icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card-message-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  .card-signature {
+    font-size: 1.2rem;
+  }
+}

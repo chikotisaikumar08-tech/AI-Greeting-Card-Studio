@@ -1,0 +1,187 @@
+/* Global Theme Variables & Card Visual Themes */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Great+Vibes&family=Cinzel:wght@400..900&family=Caveat:wght@400..700&family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&family=Sacramento&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@200..800&family=Poppins:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+  /* Font Families */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cursive: 'Caveat', cursive;
+  --font-elegant: 'Great Vibes', cursive;
+  --font-header: 'Cinzel', serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Border Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow-primary: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+/* UI Light Mode Default */
+:root, [data-theme="light"] {
+  --bg-app: #f5f7fb;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafbfc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-focus: #6366f1;
+  
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-light: #e0e7ff;
+  
+  --secondary: #0ea5e9;
+  --secondary-hover: #0284c7;
+  --secondary-light: #e0f2fe;
+
+  --accent: #ec4899;
+  --accent-light: #fce7f3;
+
+  --success: #10b981;
+  --success-light: #d1fae5;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+/* UI Dark Mode */
+[data-theme="dark"] {
+  --bg-app: #090d16;
+  --bg-card: #111827;
+  --bg-card-hover: #1f2937;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-light: #6b7280;
+  --border-color: #1f2937;
+  --border-focus: #818cf8;
+
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --primary-light: rgba(129, 140, 248, 0.15);
+
+  --secondary: #38bdf8;
+  --secondary-hover: #0ea5e9;
+  --secondary-light: rgba(56, 189, 248, 0.15);
+
+  --accent: #f472b6;
+  --accent-light: rgba(244, 114, 182, 0.15);
+
+  --success: #34d399;
+  --success-light: rgba(52, 211, 153, 0.15);
+
+  --glass-bg: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   CARD STYLES (Used for greeting card themes)
+   ========================================== */
+
+/* Theme 1: Sakura Floral */
+.card-theme-sakura {
+  --card-bg: linear-gradient(135deg, #fff5f6 0%, #ffeef2 100%);
+  --card-border: 1px solid #ffd1dc;
+  --card-text: #5f2d37;
+  --card-text-muted: #8c5862;
+  --card-accent: #d15c72;
+  --card-accent-bg: rgba(209, 92, 114, 0.08);
+  --card-font-family: var(--font-serif);
+  --card-cursive-font: var(--font-cursive);
+  --card-header-font: var(--font-serif);
+  --card-shadow: 0 12px 30px rgba(209, 92, 114, 0.08);
+  --card-decor-opacity: 0.15;
+  --card-decor-color: #d15c72;
+}
+
+/* Theme 2: Midnight Luxe */
+.card-theme-midnight {
+  --card-bg: linear-gradient(135deg, #0b132b 0%, #1c2541 100%);
+  --card-border: 1px solid rgba(224, 169, 109, 0.3);
+  --card-text: #f4ede2;
+  --card-text-muted: #b5c2d3;
+  --card-accent: #e0a96d;
+  --card-accent-bg: rgba(224, 169, 109, 0.12);
+  --card-font-family: var(--font-serif);
+  --card-cursive-font: var(--font-cursive);
+  --card-header-font: var(--font-header);
+  --card-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  --card-decor-opacity: 0.2;
+  --card-decor-color: #e0a96d;
+}
+
+/* Theme 3: Warm Gold */
+.card-theme-gold {
+  --card-bg: linear-gradient(135deg, #faf8f5 0%, #f3ece0 100%);
+  --card-border: 1px solid #d4af37;
+  --card-text: #2c251e;
+  --card-text-muted: #736254;
+  --card-accent: #b8860b;
+  --card-accent-bg: rgba(184, 134, 11, 0.07);
+  --card-font-family: var(--font-serif);
+  --card-cursive-font: var(--font-elegant);
+  --card-header-font: var(--font-header);
+  --card-shadow: 0 12px 30px rgba(184, 134, 11, 0.06);
+  --card-decor-opacity: 0.12;
+  --card-decor-color: #b8860b;
+}
+
+/* Theme 4: Retro Teal */
+.card-theme-teal {
+  --card-bg: linear-gradient(135deg, #e6f6f7 0%, #cceef1 100%);
+  --card-border: 2px solid #2d7d88;
+  --card-text: #113f48;
+  --card-text-muted: #3a6b74;
+  --card-accent: #f28b38;
+  --card-accent-bg: rgba(242, 139, 56, 0.12);
+  --card-font-family: var(--font-sans);
+  --card-cursive-font: var(--font-cursive);
+  --card-header-font: var(--font-sans);
+  --card-shadow: 0 12px 28px rgba(45, 125, 136, 0.1);
+  --card-decor-opacity: 0.25;
+  --card-decor-color: #2d7d88;
+}
+
+/* Theme 5: Minimalist Slate */
+.card-theme-slate {
+  --card-bg: #ffffff;
+  --card-border: 1px solid #e2e8f0;
+  --card-text: #0f172a;
+  --card-text-muted: #475569;
+  --card-accent: #6366f1;
+  --card-accent-bg: #f1f5f9;
+  --card-font-family: var(--font-sans);
+  --card-cursive-font: var(--font-cursive);
+  --card-header-font: var(--font-sans);
+  --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  --card-decor-opacity: 0.05;
+  --card-decor-color: #475569;
+}
+
+/* Dark mode overrides for Minimalist Slate theme specifically */
+[data-theme="dark"] .card-theme-slate {
+  --card-bg: #1e293b;
+  --card-border: 1px solid #334155;
+  --card-text: #f8fafc;
+  --card-text-muted: #cbd5e1;
+  --card-accent: #818cf8;
+  --card-accent-bg: #0f172a;
+  --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
