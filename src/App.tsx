@@ -373,14 +373,14 @@ export default function App() {
           />
         )}
 
-        {(currentPath === '/user/login' || currentPath === '/user/register') && (
+        {currentPath === '/user/login' && (
           <LoginPage 
             onLoginSuccess={(tokenVal, userVal) => {
               setToken(tokenVal);
               setProfile(userVal);
               navigateTo('/user/dashboard');
             }}
-            onNavigateToRegister={() => navigateTo('/user/register')}
+            onNavigateToRegister={() => navigateTo('/register')}
             onBackToHome={() => navigateTo('/')}
           />
         )}
