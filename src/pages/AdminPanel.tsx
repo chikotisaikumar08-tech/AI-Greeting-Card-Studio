@@ -6,6 +6,7 @@ import {
   Lock, Calendar, Sparkles, BarChart2, ShieldAlert
 } from 'lucide-react';
 import { db } from '../services/supabase';
+import { API_BASE_URL } from '../config';
 
 interface AdminPanelProps {
   apiConfig: ApiConfig;
@@ -89,7 +90,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
 
       // Fetch backend registered users
       try {
-        const response = await fetch('http://localhost:5000/api/auth/users');
+        const response = await fetch(`${API_BASE_URL}/api/auth/users`);
         if (response.ok) {
           const data = await response.json();
           setRegisteredUsers(data.users);
@@ -150,7 +151,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setEditLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/admin/update-user', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/admin/update-user`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

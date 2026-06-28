@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { UserProfile, GreetingCard } from '../types';
 import { db } from '../services/supabase';
+import { API_BASE_URL } from '../config';
 
 interface UserDashboardProps {
   user: UserProfile & { mobile?: string; createdAt?: string; role?: string };
@@ -91,7 +92,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/update-profile', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/update-profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -134,7 +135,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/update-profile', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/update-profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

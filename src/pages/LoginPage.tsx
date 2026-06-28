@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff, Send, Sparkles, AlertCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { UserProfile } from '../types';
+import { API_BASE_URL } from '../config';
 
 interface LoginPageProps {
   onLoginSuccess: (token: string, user: UserProfile) => void;
@@ -48,7 +49,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

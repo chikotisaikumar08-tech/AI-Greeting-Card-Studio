@@ -8,6 +8,7 @@ import { RegisterPage } from './pages/RegisterPage';
 import { UserDashboard } from './pages/UserDashboard';
 import { ApiConfig, GreetingCard, UserProfile } from './types';
 import { Sparkles, Moon, Sun, Send, LogOut, ShieldAlert } from 'lucide-react';
+import { API_BASE_URL } from './config';
 
 // Access Denied Page (403)
 const AccessDenied: React.FC<{ role: 'admin' | 'user'; onRedirect: () => void }> = ({ role, onRedirect }) => (
@@ -114,7 +115,7 @@ export default function App() {
 
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:5000/api/auth/me', {
+      fetch(`${API_BASE_URL}/api/auth/me`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(res => {
